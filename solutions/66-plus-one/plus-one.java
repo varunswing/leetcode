@@ -10,6 +10,7 @@ class Solution {
         }
         int[] ans = new int[n+1];
         ans[0] = 1;
+        System.out.println(ans);
         return ans;
     }
 }
