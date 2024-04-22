@@ -3,23 +3,10 @@ class Solution {
         int n = haystack.length();
         int m = needle.length();
         
-        int i=0, j=0;
-        while(i<n && j<m){
-            if(haystack.charAt(i) == needle.charAt(j)){
-                j++;
-            }else{
-                if(j > 0 && haystack.charAt(i-1) == needle.charAt(j-1)){
-                    i = i - j;
-                }
-                j=0;
+        for(int i=0; i<n-m+1; i++){
+            if(haystack.substring(i, i+m).equals(needle)){
+                return i;
             }
-            i++;
-            if(j==m){
-                return i-m;
-            }
-        }
-        if(j==m){
-            return i-m;
         }
         return -1;
     }
