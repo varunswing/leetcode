@@ -1,3 +1,4 @@
+package ranDumbQuestions;
 class Solution {
   public boolean isEvenOddTree(TreeNode root) {
     Queue<TreeNode> q = new LinkedList<>(Arrays.asList(root));

@@ -1,3 +1,4 @@
+package ranDumbQuestions;
 class Solution {
   public int findMaxLength(int[] nums) {
     int ans = 0;

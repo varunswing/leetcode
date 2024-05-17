@@ -1,3 +1,4 @@
+package ranDumbQuestions;
 class Solution {
     public int missingNumber(int[] nums) {
         Arrays.sort(nums);
