@@ -18,6 +18,7 @@ class Multi extends Thread{
         t1.start();  
     }  
 }  
+```
 
 ## Implementing the Runnable interface:
 
@@ -38,6 +39,7 @@ class Multi3 implements Runnable{
         t1.start();  
     }  
 }  
+```
 
 // Creating a thread using Runnable
 Thread thread = new Thread(new MyRunnable());
@@ -64,6 +66,7 @@ public class MyThread
         System.out.println(str);  
     }  
 }  
+```
 
 
 ## Using the Thread Class: Thread(Runnable r, String name)
@@ -94,7 +97,8 @@ public class MyThread2 implements Runnable
         String str = th1.getName();  
         System.out.println(str);  
     }    
-}    
+}   
+``` 
 
 
 ## Using Lambda expressions (Java 8 and later):
@@ -110,6 +114,7 @@ Thread thread = new Thread(() -> {
     // Thread logic goes here
 });
 thread.start();
+```
 
 
 ## Using Executor Framework:
@@ -119,11 +124,15 @@ You can use classes like ExecutorService and ThreadPoolExecutor to create and ma
 
 ### CODE
 
+
+```java
 ExecutorService executor = Executors.newFixedThreadPool(5); // Creating a thread pool with 5 threads
 executor.execute(() -> {
     // Thread logic goes here
 });
 executor.shutdown(); // Remember to shutdown the executor when done
+
+```
 
 These are some of the common ways to create threads in Java. 
 The choice of method depends on the specific requirements and design of your application.
@@ -168,6 +177,7 @@ class Second
         System.out.println("EXITING MAIN");
     }
 }
+```
 
 Output
 CHILD =THREAD [ONE, 5, main]
