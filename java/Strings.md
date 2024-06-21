@@ -22,8 +22,7 @@ System.out.println("Character at 3rd position = "
 		+ s.charAt(3));// k
 
 ```
-## Return the substring from the ith index character
-// to end of string
+## Return the substring from the ith index character to end of string
 ```java
 System.out.println("Substring " + s.substring(3));// ksforGeeks
 
@@ -31,6 +30,7 @@ System.out.println("Substring " + s.substring(3));// ksforGeeks
 ## Returns the substring from i to j-1 index.
 ```java
 System.out.println("Substring = " + s.substring(2, 5));// eks
+```
 
 ## Concatenates string2 to the end of string1.
 ```java
@@ -46,6 +46,7 @@ System.out.println("Index of Share " +
 		s4.indexOf("Share"));// 6
 ```
 ## Returns the index within the string of the first occurrence of the specified string, starting at the specified index.
+```java
 System.out.println("Index of a = " +
 		s4.indexOf('a', 3));// 8
 ```
