@@ -7,12 +7,14 @@
 * https://cheatography.com/carlmig/cheat-sheets/java-8-streams/
 
 Certainly! Here's a cheat sheet for common Stream operations in Java:
-1. Creating Streams:
+1. ### Creating Streams:
+
     * Stream.of(T... values): Creates a stream from specified values.
     * Collection.stream(): Creates a stream from a collection.
     * Arrays.stream(T[] array): Creates a stream from an array.
     * Stream.iterate(T seed, UnaryOperator<T> f): Generates an infinite stream by applying a function to a seed value.
-2. Intermediate Operations:
+2. ### Intermediate Operations:
+
     * filter(Predicate<T> predicate): Filters elements based on a predicate.
     * map(Function<T, R> mapper): Transforms elements using a mapper function.
     * flatMap(Function<T, Stream<R>> mapper): Transforms elements into streams and flattens the results.
@@ -20,7 +22,8 @@ Certainly! Here's a cheat sheet for common Stream operations in Java:
     * sorted(): Sorts elements.
     * limit(long maxSize): Truncates the stream to a maximum size.
     * skip(long n): Skips the first n elements of the stream.
-3. Terminal Operations:
+3. ### Terminal Operations:
+
     * forEach(Consumer<T> action): Performs an action for each element of the stream.
     * collect(Collector<T, A, R> collector): Collects elements into a collection.
     * reduce(BinaryOperator<T> accumulator): Reduces the stream to a single value using an accumulator function.
@@ -32,7 +35,8 @@ Certainly! Here's a cheat sheet for common Stream operations in Java:
     * noneMatch(Predicate<T> predicate): Checks if no elements match a predicate.
     * findFirst(): Finds the first element in the stream.
     * findAny(): Finds any element in the stream.
-4. Short-Circuiting Operations:
+4. ### Short-Circuiting Operations:
+
     * Short-circuiting operations terminate the stream early if a certain condition is met, improving performance for infinite streams.
     * Examples: anyMatch(), allMatch(), noneMatch(), findFirst(), findAny(), limit(), skip().
 
