@@ -180,6 +180,7 @@ class Second
 ```
 
 Output
+```java
 CHILD =THREAD [ONE, 5, main]
 CHILD =THREAD [TWO, 5, main]
 CHILD =THREAD [THREE, 5, main]
@@ -193,6 +194,7 @@ ONE : 3 EXITING ONE
 TWO : 3 EXITINGTWO
 THREE : 3 EXITINGTHREE
 EXITING MAIN
+```
 
 In the code above, we have implemented multi-threading by using the run method### .
 Then we have initiated a thread by using the constructor, since the thread is created from it.
