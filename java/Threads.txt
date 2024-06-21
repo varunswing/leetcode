@@ -1,10 +1,13 @@
-**Extending the Thread class:
+# Thread in Java Cheat Sheet
+
+## Extending the Thread class:
 
 You can create a class that extends the Thread class and overrides the run() method.
 Then, you can instantiate an object of that class and call its start() method to begin execution.
 
-CODE
+### CODE
 
+```java
 class Multi extends Thread{  
     public void run(){  
         System.out.println("thread is running...");  
@@ -16,13 +19,14 @@ class Multi extends Thread{
     }  
 }  
 
-** Implementing the Runnable interface:
+## Implementing the Runnable interface:
 
 You can create a class that implements the Runnable interface, which requires you to implement the run() method.
 Then, you can pass an instance of this class to a Thread object and start the thread.
 
-CODE
+### CODE
 
+```java
 class Multi3 implements Runnable{  
     public void run(){  
         System.out.println("thread is running...");  
@@ -40,12 +44,13 @@ Thread thread = new Thread(new MyRunnable());
 thread.start();
 
 
-** Using the Thread Class: Thread(String Name):
+## Using the Thread Class: Thread(String Name):
 
 We can directly use the Thread class to spawn new threads using the constructors defined above.
 
-CODE
+### CODE
 
+```java
 public class MyThread 
 {  
     public static void main(String argvs[])  
@@ -61,11 +66,12 @@ public class MyThread
 }  
 
 
-**Using the Thread Class: Thread(Runnable r, String name)
+## Using the Thread Class: Thread(Runnable r, String name)
 Observe the following program.
 
-CODE
+### CODE
 
+```java
 public class MyThread2 implements Runnable  
 {    
     public void run()  
@@ -91,13 +97,14 @@ public class MyThread2 implements Runnable
 }    
 
 
-**Using Lambda expressions (Java 8 and later):
+## Using Lambda expressions (Java 8 and later):
 
-With Java 8's lambda expressions, you can simplify the creation of threads, 
+With Java 8 lambda expressions, you can simplify the creation of threads, 
 especially when using the Runnable interface.
 
-CODE
+### CODE
 
+```java
 // Creating a thread using Lambda expression
 Thread thread = new Thread(() -> {
     // Thread logic goes here
@@ -105,12 +112,12 @@ Thread thread = new Thread(() -> {
 thread.start();
 
 
-**Using Executor Framework:
+## Using Executor Framework:
 
 Java provides the Executor framework to manage threads more efficiently. 
 You can use classes like ExecutorService and ThreadPoolExecutor to create and manage threads.
 
-CODE
+### CODE
 
 ExecutorService executor = Executors.newFixedThreadPool(5); // Creating a thread pool with 5 threads
 executor.execute(() -> {
@@ -125,8 +132,9 @@ The choice of method depends on the specific requirements and design of your app
 
 **MULTI THREADING
 
-CODE
+### CODE
 
+```java
 class First implements Runnable
 {
     Thread t; String S;
@@ -176,6 +184,6 @@ TWO : 3 EXITINGTWO
 THREE : 3 EXITINGTHREE
 EXITING MAIN
 
-In the code above, we have implemented multi-threading by using the run method.
+In the code above, we have implemented multi-threading by using the run method### .
 Then we have initiated a thread by using the constructor, since the thread is created from it.
-Then we can start by calling the start() method. Run the code in your editor to see how it works.
+Then we can start by calling the start() method. Run the code in your editor to see how it works.### 
