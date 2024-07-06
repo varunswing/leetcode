@@ -3,8 +3,8 @@
 ## Creational Patterns
 
 ### Singleton
-Expanded Definition: The Singleton pattern restricts the instantiation of a class to a single instance. This is useful when exactly one object is needed to coordinate actions across the system.
-Detailed Analogy: Think of a school principal. A school typically has only one principal to manage administrative tasks and decisions. If anyone needs to interact with the principal, they interact with the same individual.
+* Expanded Definition: The Singleton pattern restricts the instantiation of a class to a single instance. This is useful when exactly one object is needed to coordinate actions across the system.
+* Detailed Analogy: Think of a school principal. A school typically has only one principal to manage administrative tasks and decisions. If anyone needs to interact with the principal, they interact with the same individual.
 Additional Code Example:
 ```java
 public class Principal {
@@ -32,8 +32,8 @@ public class Principal {
 ```
 
 ### Factory Method
-Expanded Definition: The Factory Method pattern defines an interface for creating an object, but allows subclasses to alter the type of objects that will be created.
-Detailed Analogy: Imagine a bakery that produces different types of bread (e.g., wheat bread, rye bread, sourdough). The bakery's bread production line is the factory method that determines which type of bread to produce based on the ingredients.
+* Expanded Definition: The Factory Method pattern defines an interface for creating an object, but allows subclasses to alter the type of objects that will be created.
+* Detailed Analogy: Imagine a bakery that produces different types of bread (e.g., wheat bread, rye bread, sourdough). The bakery's bread production line is the factory method that determines which type of bread to produce based on the ingredients.
 Additional Code Example:
 ```java
 abstract class Bread {
@@ -75,8 +75,8 @@ class RyeBakery extends Bakery {
 ```
 
 ### Abstract Factory
-Expanded Definition: The Abstract Factory pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes. It involves multiple factory methods within a super factory (i.e., factory of factories).
-Detailed Analogy: Consider a company that manufactures different types of cars (e.g., electric cars and gasoline cars). Each type of car has various parts like engines and tires. The abstract factory is like a car manufacturing plant that creates specific factories for electric car parts and gasoline car parts.
+* Expanded Definition: The Abstract Factory pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes. It involves multiple factory methods within a super factory (i.e., factory of factories).
+* Detailed Analogy: Consider a company that manufactures different types of cars (e.g., electric cars and gasoline cars). Each type of car has various parts like engines and tires. The abstract factory is like a car manufacturing plant that creates specific factories for electric car parts and gasoline car parts.
 Additional Code Example:
 ```java
 interface Engine {
@@ -138,8 +138,8 @@ class GasolineCarFactory implements CarFactory {
 ```
 
 ### Builder
-Expanded Definition: The Builder pattern separates the construction of a complex object from its representation. It allows you to create different types and representations of an object using the same building process.
-Detailed Analogy: Imagine ordering a custom sandwich at a deli. You specify each ingredient, such as bread type, meat, cheese, and vegetables. The deli worker (builder) constructs the sandwich step by step according to your specifications.
+* Expanded Definition: The Builder pattern separates the construction of a complex object from its representation. It allows you to create different types and representations of an object using the same building process.
+* Detailed Analogy: Imagine ordering a custom sandwich at a deli. You specify each ingredient, such as bread type, meat, cheese, and vegetables. The deli worker (builder) constructs the sandwich step by step according to your specifications.
 Additional Code Example:
 ```java
 class Sandwich {
@@ -205,8 +205,8 @@ public class BuilderPatternDemo {
 ```
 
 ### Prototype
-Expanded Definition: The Prototype pattern creates new objects by copying an existing object, known as the prototype. This is useful for creating new instances of complex objects without the overhead of creating them from scratch.
-Detailed Analogy: Consider a company that designs custom-made suits. Instead of measuring and creating a suit from scratch each time, they have a base prototype suit that they modify according to the customer's measurements and preferences.
+* Expanded Definition: The Prototype pattern creates new objects by copying an existing object, known as the prototype. This is useful for creating new instances of complex objects without the overhead of creating them from scratch.
+* Detailed Analogy: Consider a company that designs custom-made suits. Instead of measuring and creating a suit from scratch each time, they have a base prototype suit that they modify according to the customer's measurements and preferences.
 Additional Code Example:
 ```java
 class Suit implements Cloneable {
@@ -247,8 +247,8 @@ public class PrototypePatternDemo {
 ## Structural Patterns
 
 ### Adapter
-Expanded Definition: The Adapter pattern allows incompatible interfaces to work together by converting one interface into another that the client expects. This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces.
-Detailed Analogy: Think of a universal charger adapter that allows you to plug your electronic device into different types of electrical sockets around the world.
+* Expanded Definition: The Adapter pattern allows incompatible interfaces to work together by converting one interface into another that the client expects. This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces.
+* Detailed Analogy: Think of a universal charger adapter that allows you to plug your electronic device into different types of electrical sockets around the world.
 Additional Code Example:
 ```java
 interface AmericanPlug {
@@ -288,8 +288,8 @@ public class AdapterPatternDemo {
 ```
 
 ### Bridge
-Expanded Definition: The Bridge pattern decouples an abstraction from its implementation so that the two can vary independently. This pattern involves an interface which acts as a bridge which makes the functionality of concrete classes independent from interface implementer classes.
-Detailed Analogy: Think of a remote control (abstraction) that can operate different types of devices like a TV, sound system, or air conditioner (implementation). The remote control works the same way regardless of the device it operates.
+* Expanded Definition: The Bridge pattern decouples an abstraction from its implementation so that the two can vary independently. This pattern involves an interface which acts as a bridge which makes the functionality of concrete classes independent from interface implementer classes.
+* Detailed Analogy: Think of a remote control (abstraction) that can operate different types of devices like a TV, sound system, or air conditioner (implementation). The remote control works the same way regardless of the device it operates.
 Additional Code Example:
 ```java
 interface Remote {
@@ -348,8 +348,8 @@ public class BridgePatternDemo {
 ```
 
 ### Composite
-Expanded Definition: The Composite pattern allows you to compose objects into tree structures to represent part-whole hierarchies. It lets clients treat individual objects and compositions of objects uniformly.
-Detailed Analogy: Think of a company where there are different levels of employees. A manager can have subordinates who are also managers or regular employees. The company can be represented as a tree where each node is either an individual employee or a composite of multiple employees.
+* Expanded Definition: The Composite pattern allows you to compose objects into tree structures to represent part-whole hierarchies. It lets clients treat individual objects and compositions of objects uniformly.
+* Detailed Analogy: Think of a company where there are different levels of employees. A manager can have subordinates who are also managers or regular employees. The company can be represented as a tree where each node is either an individual employee or a composite of multiple employees.
 Additional Code Example:
 ```java
 interface Employee {
@@ -422,8 +422,8 @@ public class CompositePatternDemo {
 ```
 
 ### Decorator
-Expanded Definition: The Decorator pattern allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects from the same class.
-Detailed Analogy: Think of a plain coffee. You can add different ingredients like milk, sugar, or whipped cream to enhance the coffee. Each addition decorates the coffee with additional features.
+* Expanded Definition: The Decorator pattern allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects from the same class.
+* Detailed Analogy: Think of a plain coffee. You can add different ingredients like milk, sugar, or whipped cream to enhance the coffee. Each addition decorates the coffee with additional features.
 Additional Code Example:
 ```java
 interface Coffee {
@@ -500,8 +500,8 @@ public class DecoratorPatternDemo {
 ```
 
 ### Facade
-Expanded Definition: The Facade pattern provides a unified interface to a set of interfaces in a subsystem, making it easier to use the subsystem. It defines a higher-level interface that makes the subsystem easier to use.
-Detailed Analogy: Think of a car's dashboard. You don't need to understand the complex internal mechanisms of the car to drive it. The dashboard provides a simple interface to control the car.
+* Expanded Definition: The Facade pattern provides a unified interface to a set of interfaces in a subsystem, making it easier to use the subsystem. It defines a higher-level interface that makes the subsystem easier to use.
+* Detailed Analogy: Think of a car's dashboard. You don't need to understand the complex internal mechanisms of the car to drive it. The dashboard provides a simple interface to control the car.
 Additional Code Example:
 ```java
 class Engine {
@@ -557,8 +557,8 @@ public class FacadePatternDemo {
 ```
 
 ### Flyweight
-Expanded Definition: The Flyweight pattern reduces the cost of creating and manipulating a large number of similar objects. It achieves this by sharing as much data as possible between similar objects; the shared objects are called flyweights.
-Detailed Analogy: Think of text editors where each character on the screen is an object. Instead of creating a new object for each character, the editor uses a flyweight object for each character type, and the position of each character is stored separately.
+* Expanded Definition: The Flyweight pattern reduces the cost of creating and manipulating a large number of similar objects. It achieves this by sharing as much data as possible between similar objects; the shared objects are called flyweights.
+* Detailed Analogy: Think of text editors where each character on the screen is an object. Instead of creating a new object for each character, the editor uses a flyweight object for each character type, and the position of each character is stored separately.
 Additional Code Example:
 ```java
 import java.util.HashMap;
@@ -637,8 +637,8 @@ public class FlyweightPatternDemo {
 ```
 
 ### Proxy
-Expanded Definition: The Proxy pattern provides a surrogate or placeholder for another object to control access to it. It is used to provide controlled access to a resource, creating a level of indirection between the client and the actual object.
-Detailed Analogy: Think of a bank account. When you want to check your balance or perform a transaction, you don’t interact directly with the bank's internal systems. Instead, you interact with a teller or an ATM (proxy) that controls access to your account. The proxy can perform additional tasks such as checking permissions, logging accesses, or even caching results.
+* Expanded Definition: The Proxy pattern provides a surrogate or placeholder for another object to control access to it. It is used to provide controlled access to a resource, creating a level of indirection between the client and the actual object.
+* Detailed Analogy: Think of a bank account. When you want to check your balance or perform a transaction, you don’t interact directly with the bank's internal systems. Instead, you interact with a teller or an ATM (proxy) that controls access to your account. The proxy can perform additional tasks such as checking permissions, logging accesses, or even caching results.
 Additional Code Example:
 ```java
 interface Internet {
@@ -696,8 +696,8 @@ ProxyInternet: Acts as a proxy to control access to the real internet connection
 ## Behavioral Patterns
 
 ### Chain of Responsibility
-Expanded Definition: The Chain of Responsibility pattern allows a request to be passed through a chain of handlers. Each handler decides either to process the request or to pass it to the next handler in the chain.
-Detailed Analogy: Think of an IT support ticket system where a ticket is passed through different levels of support (Level 1, Level 2, Level 3). Each level decides if it can resolve the issue; if not, it passes the ticket to the next level.
+* Expanded Definition: The Chain of Responsibility pattern allows a request to be passed through a chain of handlers. Each handler decides either to process the request or to pass it to the next handler in the chain.
+* Detailed Analogy: Think of an IT support ticket system where a ticket is passed through different levels of support (Level 1, Level 2, Level 3). Each level decides if it can resolve the issue; if not, it passes the ticket to the next level.
 Additional Code Example:
 ```java
 abstract class SupportHandler {
@@ -762,8 +762,8 @@ public class ChainOfResponsibilityPatternDemo {
 ```
 
 ### Command
-Expanded Definition: The Command pattern encapsulates a request as an object, thereby allowing for parameterization of clients with different requests, queuing of requests, and logging of requests.
-Detailed Analogy: Think of a restaurant ordering system. A customer (client) gives an order (command) to a waiter (invoker), who then processes the order and sends it to the chef (receiver) to prepare the food.
+* Expanded Definition: The Command pattern encapsulates a request as an object, thereby allowing for parameterization of clients with different requests, queuing of requests, and logging of requests.
+* Detailed Analogy: Think of a restaurant ordering system. A customer (client) gives an order (command) to a waiter (invoker), who then processes the order and sends it to the chef (receiver) to prepare the food.
 Additional Code Example:
 ```java
 // Receiver
@@ -836,12 +836,12 @@ public class CommandPatternDemo {
 ```
 
 ### Interpreter
-Expanded Definition: The Interpreter pattern defines a grammatical representation for a language and provides an interpreter to interpret sentences in the language.
-Detailed Analogy: Think of a language translation system. The interpreter pattern can be used to interpret and execute different language expressions or commands.
+* Expanded Definition: The Interpreter pattern defines a grammatical representation for a language and provides an interpreter to interpret sentences in the language.
+* Detailed Analogy: Think of a language translation system. The interpreter pattern can be used to interpret and execute different language expressions or commands.
 Additional Code Example: This pattern often involves complex implementations for specific languages or grammars, and its usage is less common in everyday programming scenarios.
 Iterator
-Expanded Definition: The Iterator pattern provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
-Detailed Analogy: Think of a playlist in a music player. The iterator pattern allows you to iterate over each song in the playlist without needing to know about the internal structure of the playlist.
+* Expanded Definition: The Iterator pattern provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+* Detailed Analogy: Think of a playlist in a music player. The iterator pattern allows you to iterate over each song in the playlist without needing to know about the internal structure of the playlist.
 Additional Code Example:
 ```java
 import java.util.ArrayList;
@@ -884,8 +884,8 @@ public class IteratorPatternDemo {
 ```
 
 ### Mediator
-Expanded Definition: The Mediator pattern defines an object that encapsulates how a set of objects interact. It promotes loose coupling by keeping objects from referring to each other explicitly and allows them to communicate through the mediator object.
-Detailed Analogy: Think of an air traffic control system. The mediator coordinates communication between aircraft, ensuring they don't collide and manage landing and takeoff schedules.
+* Expanded Definition: The Mediator pattern defines an object that encapsulates how a set of objects interact. It promotes loose coupling by keeping objects from referring to each other explicitly and allows them to communicate through the mediator object.
+* Detailed Analogy: Think of an air traffic control system. The mediator coordinates communication between aircraft, ensuring they don't collide and manage landing and takeoff schedules.
 Additional Code Example:
 ```java
 import java.util.ArrayList;
@@ -971,8 +971,8 @@ public class MediatorPatternDemo {
 ```
 
 ### Observer
-Expanded Definition: The Observer pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
-Detailed Analogy: Think of subscribing to a newsletter. When new content is published, subscribers are notified and receive updates automatically.
+* Expanded Definition: The Observer pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+* Detailed Analogy: Think of subscribing to a newsletter. When new content is published, subscribers are notified and receive updates automatically.
 Additional Code Example:
 ```java
 import java.util.ArrayList;
@@ -1047,8 +1047,8 @@ public class ObserverPatternDemo {
 }
 ```
 ### State
-Expanded Definition: The State pattern allows an object to alter its behavior when its internal state changes. The object will appear to change its class.
-Detailed Analogy: Think of a traffic light. It changes behavior (color signals) based on its internal state (green, yellow, red) and external events (pedestrian crossing, vehicle detection).
+* Expanded Definition: The State pattern allows an object to alter its behavior when its internal state changes. The object will appear to change its class.
+* Detailed Analogy: Think of a traffic light. It changes behavior (color signals) based on its internal state (green, yellow, red) and external events (pedestrian crossing, vehicle detection).
 Additional Code Example:
 ```java
 // Context```
@@ -1108,8 +1108,8 @@ public class StatePatternDemo {
 ```
 
 ### Strategy
-Expanded Definition: The Strategy pattern defines a family of algorithms, encapsulates each algorithm, and makes them interchangeable. It lets the algorithm vary independently from clients that use it.
-Detailed Analogy: Think of sorting algorithms. You can use different strategies (algorithms) like bubble sort, quicksort, or merge sort depending on the context (size of data, performance requirements).
+* Expanded Definition: The Strategy pattern defines a family of algorithms, encapsulates each algorithm, and makes them interchangeable. It lets the algorithm vary independently from clients that use it.
+* Detailed Analogy: Think of sorting algorithms. You can use different strategies (algorithms) like bubble sort, quicksort, or merge sort depending on the context (size of data, performance requirements).
 Additional Code Example:
 ```java
 // Strategy
