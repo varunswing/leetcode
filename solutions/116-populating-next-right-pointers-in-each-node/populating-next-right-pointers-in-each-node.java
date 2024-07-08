@@ -38,7 +38,6 @@ class Solution {
                 }else{
                     current.next = queue.peek();
                 }
-                System.out.print(current.val + " ");
                 if (current.left != null) {
                     queue.add(current.left);
                 }
