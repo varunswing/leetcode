@@ -195,7 +195,225 @@ TWO : 3 EXITINGTWO
 THREE : 3 EXITINGTHREE
 EXITING MAIN
 ```
+1. Using Thread Class
+```java
+class MyThread extends Thread {
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(Thread.currentThread().getId() + " Value " + i);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
-In the code above, we have implemented multi-threading by using the run method### .
-Then we have initiated a thread by using the constructor, since the thread is created from it.
-Then we can start by calling the start() method. Run the code in your editor to see how it works.### 
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        MyThread t2 = new MyThread();
+        t1.start();
+        t2.start();
+    }
+}
+```
+OUTPUT
+```java
+10 Value 0
+11 Value 0
+10 Value 1
+11 Value 1
+10 Value 2
+11 Value 2
+10 Value 3
+11 Value 3
+10 Value 4
+11 Value 4
+```
+
+
+2. Using Runnable Interface
+```java
+class MyRunnable implements Runnable {
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(Thread.currentThread().getId() + " Value " + i);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new MyRunnable());
+        Thread t2 = new Thread(new MyRunnable());
+        t1.start();
+        t2.start();
+    }
+}
+```
+OUTPUT
+```java
+10 Value 0
+11 Value 0
+10 Value 1
+11 Value 1
+10 Value 2
+11 Value 2
+10 Value 3
+11 Value 3
+10 Value 4
+11 Value 4
+```
+
+
+3. Using ExecutorService
+```java
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+class MyRunnable implements Runnable {
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(Thread.currentThread().getId() + " Value " + i);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+        executor.submit(new MyRunnable());
+        executor.submit(new MyRunnable());
+        executor.shutdown();
+    }
+}
+```
+
+OUTPUT
+```java
+10 Value 0
+11 Value 0
+10 Value 1
+11 Value 1
+10 Value 2
+11 Value 2
+10 Value 3
+11 Value 3
+10 Value 4
+11 Value 4
+```
+
+
+4. Using Callable and Future
+```java
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+class MyCallable implements Callable<Integer> {
+    public Integer call() {
+        int sum = 0;
+        for (int i = 0; i < 5; i++) {
+            sum += i;
+            System.out.println(Thread.currentThread().getId() + " Value " + i);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+        Future<Integer> future1 = executor.submit(new MyCallable());
+        Future<Integer> future2 = executor.submit(new MyCallable());
+
+        try {
+            System.out.println("Sum from thread 1: " + future1.get());
+            System.out.println("Sum from thread 2: " + future2.get());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        executor.shutdown();
+    }
+}
+```
+OUTPUT
+```java
+10 Value 0
+11 Value 0
+10 Value 1
+11 Value 1
+10 Value 2
+11 Value 2
+10 Value 3
+11 Value 3
+10 Value 4
+11 Value 4
+Sum from thread 1: 10
+Sum from thread 2: 10
+```
+
+5. Using ForkJoinPool
+
+```java
+import java.util.concurrent.RecursiveTask;
+import java.util.concurrent.ForkJoinPool;
+
+class MyRecursiveTask extends RecursiveTask<Integer> {
+    private int workload;
+
+    public MyRecursiveTask(int workload) {
+        this.workload = workload;
+    }
+
+    @Override
+    protected Integer compute() {
+        if (workload > 1) {
+            int mid = workload / 2;
+            MyRecursiveTask task1 = new MyRecursiveTask(mid);
+            MyRecursiveTask task2 = new MyRecursiveTask(workload - mid);
+
+            task1.fork();
+            int result2 = task2.compute();
+            int result1 = task1.join();
+
+            return result1 + result2;
+        } else {
+            System.out.println(Thread.currentThread().getId() + " Processing workload: " + workload);
+            return workload;
+        }
+    }
+
+    public static void main(String[] args) {
+        ForkJoinPool forkJoinPool = new ForkJoinPool();
+        MyRecursiveTask task = new MyRecursiveTask(10);
+        int result = forkJoinPool.invoke(task);
+        System.out.println("Result: " + result);
+    }
+}
+```
+
+OUTPUT
+```java
+12 Processing workload: 1
+10 Processing workload: 1
+10 Processing workload: 1
+12 Processing workload: 1
+12 Processing workload: 1
+10 Processing workload: 1
+10 Processing workload: 1
+12 Processing workload: 1
+12 Processing workload: 1
+10 Processing workload: 1
+Result: 10
+```
