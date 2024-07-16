@@ -5,7 +5,7 @@ class Solution {
     
     public int bs(int l, int r, int[] nums, int k){
         int m = l + (r-l)/2;
-        if(l < 0 || r > nums.length-1 || l>r){
+        if(l>r){
             return -1;
         }
         
