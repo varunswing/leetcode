@@ -1,55 +1,44 @@
 class Solution {
-  public List<List<Integer>> pacificAtlantic(int[][] heights) {
-    final int m = heights.length;
-    final int n = heights[0].length;
-    List<List<Integer>> ans = new ArrayList<>();
-    Queue<int[]> qP = new ArrayDeque<>();
-    Queue<int[]> qA = new ArrayDeque<>();
-    boolean[][] seenP = new boolean[m][n];
-    boolean[][] seenA = new boolean[m][n];
+    public List<List<Integer>> pacificAtlantic(int[][] heights) {
+        int n = heights.length;
+        int m = heights[0].length;
 
-    for (int i = 0; i < m; ++i) {
-      qP.offer(new int[] {i, 0});
-      qA.offer(new int[] {i, n - 1});
-      seenP[i][0] = true;
-      seenA[i][n - 1] = true;
+        boolean[][] seenP = new boolean[n][m];
+        boolean[][] seenA = new boolean[n][m];
+
+        for(int i=0; i<n; i++){
+            dfs(heights, n, m, i, 0, seenP, 0);
+            dfs(heights, n, m, i, m-1, seenA, 0);
+        }
+
+        for(int j=0; j<m; j++){
+            dfs(heights, n, m, 0, j, seenP, 0);
+            dfs(heights, n, m, n-1, j, seenA, 0);
+        }
+
+        List<List<Integer>> ans = new ArrayList();
+
+        for(int i=0; i<n; i++){
+            for(int j=0; j<m; j++){
+                if(seenP[i][j] && seenA[i][j]){
+                    ans.add(new ArrayList(Arrays.asList(i, j)));
+                }
+            }
+        }
+
+        return ans;
     }
 
-    for (int j = 0; j < n; ++j) {
-      qP.offer(new int[] {0, j});
-      qA.offer(new int[] {m - 1, j});
-      seenP[0][j] = true;
-      seenA[m - 1][j] = true;
+    public void dfs(int[][] heights, int n, int m, int i, int j, boolean[][] seen, int height){
+        if(i < 0 || j>= m || i >= n || j < 0 || seen[i][j] || heights[i][j] < height){
+            return;
+        }
+
+        seen[i][j] = true;
+
+        dfs(heights, n, m, i+1, j, seen, heights[i][j]);
+        dfs(heights, n, m, i, j+1, seen, heights[i][j]);
+        dfs(heights, n, m, i-1, j, seen, heights[i][j]);
+        dfs(heights, n, m, i, j-1, seen, heights[i][j]);
     }
-
-    bfs(heights, qP, seenP);
-    bfs(heights, qA, seenA);
-
-    for (int i = 0; i < m; ++i)
-      for (int j = 0; j < n; ++j)
-        if (seenP[i][j] && seenA[i][j])
-          ans.add(new ArrayList<>(Arrays.asList(i, j)));
-
-    return ans;
-  }
-
-  private static final int[][] dirs = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
-
-  private void bfs(int[][] heights, Queue<int[]> q, boolean[][] seen) {
-    while (!q.isEmpty()) {
-      final int i = q.peek()[0];
-      final int j = q.poll()[1];
-      final int h = heights[i][j];
-      for (int[] dir : dirs) {
-        final int x = i + dir[0];
-        final int y = j + dir[1];
-        if (x < 0 || x == heights.length || y < 0 || y == heights[0].length)
-          continue;
-        if (seen[x][y] || heights[x][y] < h)
-          continue;
-        q.offer(new int[] {x, y});
-        seen[x][y] = true;
-      }
-    }
-  }
 }
