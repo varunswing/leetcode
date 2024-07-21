@@ -44,9 +44,17 @@ class Solution {
 
         seen[i][j] = true;
 
-        dfs(heights, n, m, i+1, j, seen, heights[i][j]);
-        dfs(heights, n, m, i, j+1, seen, heights[i][j]);
-        dfs(heights, n, m, i-1, j, seen, heights[i][j]);
-        dfs(heights, n, m, i, j-1, seen, heights[i][j]);
+        if(i+1 < n && heights[i][j] <= heights[i+1][j] && !seen[i+1][j]){
+            dfs(heights, n, m, i+1, j, seen, heights[i][j]);
+        }
+        if(j+1 < m && heights[i][j] <= heights[i][j+1] && !seen[i][j+1]){
+            dfs(heights, n, m, i, j+1, seen, heights[i][j]);
+        }
+        if(i-1 >= 0 && heights[i][j] <= heights[i-1][j] && !seen[i-1][j]){
+            dfs(heights, n, m, i-1, j, seen, heights[i][j]);
+        }
+        if(j-1 >=0  && heights[i][j] <= heights[i][j-1] && !seen[i][j-1]){
+            dfs(heights, n, m, i, j-1, seen, heights[i][j]);
+        }
     }
 }
