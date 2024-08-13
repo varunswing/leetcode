@@ -14,18 +14,22 @@
  * }
  */
 class Solution {
-    public boolean isSubtree(TreeNode s, TreeNode t) {
-        if (s == null)
+    public boolean isSubtree(TreeNode root, TreeNode subRoot) {
+        if(root == null){
             return false;
-        if (isSameTree(s, t))
+        }
+        if(match(root, subRoot)){
             return true;
-        return isSubtree(s.left, t) || isSubtree(s.right, t);
+        }
+        
+        return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
     }
 
-    private boolean isSameTree(TreeNode p, TreeNode q) {
-        if (p == null || q == null)
-            return p == q;
-        return p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
-    }
+    public boolean match(TreeNode root, TreeNode subRoot) {
+        if (root == null || subRoot == null){
+            return root == subRoot;
+        }
 
+        return root.val == subRoot.val && match(root.left, subRoot.left) && match(root.right, subRoot.right);
+    }
 }
