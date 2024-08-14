@@ -7,8 +7,7 @@
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         def dfs(node):
-            if not node:
-                return 0
+            if not node: return 0
             leftDepth = dfs(node.left)
             rightDepth = dfs(node.right)
             if leftDepth == -1 or rightDepth == -1:
@@ -16,6 +15,4 @@ class Solution:
             if abs(leftDepth - rightDepth) > 1:
                 return -1
             return max(leftDepth, rightDepth) + 1
-        isBalanced = dfs(root)
-        if isBalanced == -1: return False
-        return True
+        return dfs(root) != -1
