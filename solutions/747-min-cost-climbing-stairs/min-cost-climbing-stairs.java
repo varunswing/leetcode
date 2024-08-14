@@ -3,24 +3,20 @@ class Solution {
     int[] tmp = new int[1001];
 
     public int minCostClimbingStairs(int[] cost) {
-        for(int i=0; i<1001; i++){
-            tmp[i] = -1;
+        int n = cost.length;
+        tmp[0] = cost[0];
+        if(n==1){
+            return tmp[0];
         }
-        return Math.min(solve(0, cost), solve(1, cost));
-    }
-
-    public int solve(int i, int[] cost){
-        if(i >= cost.length){
-            return 0;
-        }
-
-        if(tmp[i] != -1){
-            return tmp[i];
+        tmp[1] = cost[1];
+        if(n==2){
+            return Math.min(cost[0], cost[1]);
         }
 
-        int a = cost[i] + solve(i+1, cost);
-        int b = cost[i] + solve(i+2, cost);
+        for(int i=2; i<n; i++){
+            tmp[i] = cost[i] + Math.min(tmp[i-1], tmp[i-2]);
+        }
 
-        return tmp[i] = Math.min(a, b);
+        return Math.min(tmp[n-1], tmp[n-2]);
     }
 }
