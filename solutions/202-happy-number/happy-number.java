@@ -1,28 +1,22 @@
 class Solution {
-    Map<Integer, Integer> m = new HashMap();
-    public boolean isHappy(int n) {
-        if(n==1){
-            return true;
-        }
+  public boolean isHappy(int n) {
+    int slow = squaredSum(n);
+    int fast = squaredSum(squaredSum(n));
 
-        int sum = 0;
-        int a = n;
-        while(a > 0){
-            int b = a%10;
-            sum += b*b;
-            a /= 10;
-        }
-
-        if(sum==1){
-            return true;
-        }
-
-        if(m.get(sum) != null){
-            return false;
-        }
-        m.put(sum, 1);
-
-        return isHappy(sum);
-
+    while (slow != fast) {
+      slow = squaredSum(slow);
+      fast = squaredSum(squaredSum(fast));
     }
+
+    return slow == 1;
+  }
+
+  private int squaredSum(int n) {
+    int sum = 0;
+    while (n > 0) {
+      sum += Math.pow(n % 10, 2);
+      n /= 10;
+    }
+    return sum;
+  }
 }
