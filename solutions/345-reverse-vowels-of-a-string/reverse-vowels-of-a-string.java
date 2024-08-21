@@ -5,9 +5,9 @@ class Solution {
     int r = s.length() - 1;
 
         while (l < r) {
-            while (l < r && !isVowel(sb.charAt(l)))
+            while (l < r && !("aeiouAEIOU".indexOf(s.charAt(l)) != -1))
                 ++l;
-            while (l < r && !isVowel(sb.charAt(r)))
+            while (l < r && !("aeiouAEIOU".indexOf(s.charAt(r)) != -1))
                 --r;
             sb.setCharAt(l, s.charAt(r));
             sb.setCharAt(r, s.charAt(l));
@@ -18,7 +18,4 @@ class Solution {
             return sb.toString();
         }
 
-    private boolean isVowel(char c) {
-        return "aeiouAEIOU".indexOf(c) != -1;
-    }
 }
