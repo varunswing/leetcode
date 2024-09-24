@@ -1,33 +1,13 @@
-
-
-import static java.lang.Character.isUpperCase;
-
 class Solution {
     public boolean isValid(String word) {
-        if(word.length() < 3){
-            return false;
-        }
+        return word.length() >= 3 && word.chars().allMatch(Character::isLetterOrDigit) && word.chars().anyMatch(c -> isVowel((char) c)) && word.chars().anyMatch(c -> isConsonant((char) c));
+    }
 
-        boolean isVowel = false;
+    public boolean isVowel(Character c){
+        return "aeiouAEIOU".indexOf(c) != -1;
+    }
 
-        boolean isConsonant = false;
-
-        for(Character s : word.toCharArray()){
-            if(!Character.isDigit(s) && !Character.isLetter(s)){
-                return false;
-            }
-        }
-
-        for(Character s : word.toCharArray()){
-            s = Character.toLowerCase(s);
-            if(s == 'a' || s == 'e' || s == 'i' || s == 'o' || s == 'u'){
-                isVowel = true;
-            }else if(Character.isLetter(s)){
-                isConsonant = true;
-            }
-        }
-
-        return isVowel && isConsonant;
-        
+    public boolean isConsonant(Character c){
+        return Character.isLetter(c) && !isVowel(c);
     }
 }
