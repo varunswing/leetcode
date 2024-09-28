@@ -1,22 +1,26 @@
 class Solution {
-  public long validSubstringCount(String word1, String word2) {
-    long ans = 0;
-    int required = word2.length();
-    int[] count = new int[26];
+    public long validSubstringCount(String word1, String word2) {
+        long ans = 0;
+        int[] count = new int[26];
 
-    for (final char c : word2.toCharArray())
-      ++count[c - 'a'];
+        for(int i=0; i<word2.length(); i++){
+            count[word2.charAt(i) - 'a']++;
+        }
 
-    for (int l = 0, r = 0; r < word1.length(); ++r) {
-      if (--count[word1.charAt(r) - 'a'] >= 0)
-        --required;
-      while (required == 0) {
-        ans += word1.length() - r;
-        if (++count[word1.charAt(l++) - 'a'] > 0)
-          ++required;
-      }
+        int req = word2.length();
+
+        for(int j=0, k=0; k<word1.length(); k++){
+            if(--count[word1.charAt(k) - 'a'] >= 0){
+                req--;
+            }
+            while(req == 0){
+                ans += word1.length() - k;
+                if(++count[word1.charAt(j++) - 'a'] > 0){
+                    req++;
+                }
+            }
+        }
+
+        return ans;
     }
-
-    return ans;
-  }
 }
