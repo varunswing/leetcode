@@ -1,38 +1,26 @@
 class Solution {
-    public boolean lemonadeChange(int[] bills) {
-        int[] arr = new int[3];
+  public boolean lemonadeChange(int[] bills) {
+    int fives = 0;
+    int tens = 0;
 
-        for(int i=0; i<bills.length; i++){
-            if(bills[i] == 5){
-                arr[0]++;
-            }
-
-            if(bills[i] == 10){
-                if(arr[0] == 0){
-                    return false;
-                }
-                arr[1]++;
-                arr[0]--;
-            }
-
-            if(bills[i] == 20){
-                arr[2]++;
-                if(arr[0] == 0){
-                    return false;
-                }
-                if(arr[1] == 0 && arr[0] < 3){
-                    return false;
-                }
-
-                if(arr[1] == 0){
-                    arr[0] = arr[0] - 3;
-                }else if(arr[1] >= 1){
-                    arr[1]--;
-                    arr[0]--;
-                }
-            }
+    for (final int bill : bills) {
+      if (bill == 5) {
+        ++fives;
+      } else if (bill == 10) {
+        --fives;
+        ++tens;
+      } else {
+        if (tens > 0) {
+          --tens;
+          --fives;
+        } else {
+          fives -= 3;
         }
-
-        return true;
+      }
+      if (fives < 0)
+        return false;
     }
+
+    return true;
+  }
 }
