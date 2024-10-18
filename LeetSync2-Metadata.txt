@@ -2,3 +2,4 @@ solutions/424-longest-repeating-character-replacement|Medium|1728930600000
 solutions/162-find-peak-element|Medium|1728930600000
 solutions/459-repeated-substring-pattern|Easy|1728930600000
 solutions/495-teemo-attacking|Easy|1729103400000
+solutions/1243-array-transformation|Easy|1729189800000
