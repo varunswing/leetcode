@@ -1,26 +1,19 @@
 class Solution {
     public int countConsistentStrings(String allowed, String[] words) {
         boolean present[] = new boolean[123];
-
-        for(char c : allowed.toCharArray()){
-            present[c] = true;
+        for(char ch : allowed.toCharArray()) {
+            present[ch] = true;
         }
-
-        int ans = 0;
-        boolean flag = false;
-        for(String s : words){
-            flag = false;
-            for(char c : s.toCharArray()){
-                if(present[c] == false){
-                    flag = true;
-                    break;
-                }
-            }
-            if(!flag){
-                ans++;
-            }
+        int result = 0;
+        for(String str : words) {
+            if(check(str, present)) result++;
         }
-        return ans;
-        
+        return result;
+    }
+    boolean check(String str, boolean[] present) {
+        for(int i = 0; i < str.length(); i++) {
+            if(present[str.charAt(i)] == false) return false;
+        }
+        return true;
     }
 }
