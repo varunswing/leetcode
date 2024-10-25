@@ -13,3 +13,4 @@ solutions/1356-sort-integers-by-the-number-of-1-bits|Easy|1729708200000
 solutions/78-subsets|Medium|1729794600000
 solutions/90-subsets-ii|Medium|1729794600000
 solutions/3325-count-substrings-with-k-frequency-characters-i|Medium|1729881000000
+solutions/3326-minimum-division-operations-to-make-array-non-decreasing|Medium|1729881000000
