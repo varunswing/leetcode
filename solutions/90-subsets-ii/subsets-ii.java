@@ -1,22 +1,20 @@
 class Solution {
-    Set<List<Integer>> ans = new HashSet();
-    public List<List<Integer>> subsetsWithDup(int[] nums) {
-        List<Integer> a = new ArrayList();
-        Arrays.sort(nums);
-        generateSubString(nums, a, 0);
-        return new ArrayList<>(ans);
+  public List<List<Integer>> subsetsWithDup(int[] nums) {
+    List<List<Integer>> ans = new ArrayList<>();
+    Arrays.sort(nums);
+    dfs(nums, 0, new ArrayList<>(), ans);
+    return ans;
+  }
+
+  private void dfs(int[] nums, int s, List<Integer> path, List<List<Integer>> ans) {
+    ans.add(new ArrayList<>(path));
+
+    for (int i = s; i < nums.length; ++i) {
+      if (i > s && nums[i] == nums[i - 1])
+        continue;
+      path.add(nums[i]);
+      dfs(nums, i + 1, path, ans);
+      path.remove(path.size() - 1);
     }
-
-    public void generateSubString(int[] nums, List<Integer> a, int i){
-        if(i >= nums.length){
-            ans.add(new ArrayList<>(a));
-            return;
-        }
-
-        a.add(nums[i]);
-        generateSubString(nums, a, i+1);
-        a.remove(a.size() - 1);
-        generateSubString(nums, a, i+1);
-
-    }
+  }
 }
