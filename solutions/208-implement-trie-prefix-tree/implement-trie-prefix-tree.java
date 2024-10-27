@@ -22,25 +22,23 @@ class Trie {
     }
     
     public boolean search(String word) {
-        Node temp = root;
-        for(char c : word.toCharArray()){
-            if(temp.node[c - 'a'] == null){
-                return false;
-            }
-            temp = temp.node[c-'a'];
-        }
-        return temp.isWord;
+        Node node = find(word);
+        return node != null && node.isWord;
     }
     
     public boolean startsWith(String prefix) {
+        return find(prefix) != null;
+    }
+
+    public Node find(String word){
         Node temp = root;
-        for(char c : prefix.toCharArray()){
+        for(char c : word.toCharArray()){
             if(temp.node[c - 'a'] == null){
-                return false;
+                return null;
             }
             temp = temp.node[c-'a'];
         }
-        return true;
+        return temp;
     }
 }
 
