@@ -14,3 +14,4 @@ solutions/78-subsets|Medium|1729794600000
 solutions/90-subsets-ii|Medium|1729794600000
 solutions/3325-count-substrings-with-k-frequency-characters-i|Medium|1729881000000
 solutions/3326-minimum-division-operations-to-make-array-non-decreasing|Medium|1729881000000
+solutions/1051-height-checker|Easy|1729967400000
