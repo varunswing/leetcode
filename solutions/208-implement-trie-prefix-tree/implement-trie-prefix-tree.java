@@ -1,82 +1,46 @@
-class TrieNode {
-    private TrieNode[] children;
-    private boolean isEndOfWord;
-
-    public TrieNode() {
-        children = new TrieNode[26]; // Assuming only lowercase English letters
-        isEndOfWord = false;
-    }
-
-    public boolean containsKey(char ch) {
-        return children[ch - 'a'] != null;
-    }
-
-    public TrieNode get(char ch) {
-        return children[ch - 'a'];
-    }
-
-    public void put(char ch, TrieNode node) {
-        children[ch - 'a'] = node;
-    }
-
-    public void setEnd() {
-        isEndOfWord = true;
-    }
-
-    public boolean isEnd() {
-        return isEndOfWord;
-    }
+class Node{
+    Node[] node = new Node[26];
+    boolean isWord = false;
 }
 
-public class Trie {
-    private TrieNode root;
-
+class Trie {
+    Node root;
+    
     public Trie() {
-        root = new TrieNode();
+        root = new Node();
     }
     
-    // Inserts a word into the trie
     public void insert(String word) {
-        TrieNode node = root;
-        for (int i = 0; i < word.length(); i++) {
-            char currentChar = word.charAt(i);
-            if (!node.containsKey(currentChar)) {
-                node.put(currentChar, new TrieNode());
+        Node temp = root;
+        for(char c : word.toCharArray()){
+            if(temp.node[c - 'a'] == null){
+                temp.node[c - 'a'] = new Node();
             }
-            node = node.get(currentChar);
+            temp = temp.node[c-'a'];
         }
-        node.setEnd();
+        temp.isWord = true;
     }
     
-    // Search a prefix or whole key in trie and
-    // returns the node where search ends
-    private TrieNode searchPrefix(String word) {
-        TrieNode node = root;
-        for (int i = 0; i < word.length(); i++) {
-            char curLetter = word.charAt(i);
-            if (node.containsKey(curLetter)) {
-                node = node.get(curLetter);
-            } else {
+    public boolean search(String word) {
+        Node node = find(word);
+        return node != null && node.isWord;
+    }
+    
+    public boolean startsWith(String prefix) {
+        return find(prefix) != null;
+    }
+
+    public Node find(String word){
+        Node temp = root;
+        for(char c : word.toCharArray()){
+            if(temp.node[c - 'a'] == null){
                 return null;
             }
+            temp = temp.node[c-'a'];
         }
-        return node;
-    }
-    
-    // Returns if the word is in the trie
-    public boolean search(String word) {
-        TrieNode node = searchPrefix(word);
-        return node != null && node.isEnd();
-    }
-    
-    // Returns if there is any word in the trie
-    // that starts with the given prefix
-    public boolean startsWith(String prefix) {
-        TrieNode node = searchPrefix(prefix);
-        return node != null;
+        return temp;
     }
 }
-
 
 /**
  * Your Trie object will be instantiated and called as such:
