@@ -1,44 +1,62 @@
-class Node{
-    Node[] node = new Node[26];
-    boolean isWord = false;
-}
-
 class Trie {
     Node root;
+    class Node {
+        Node[] children;
+        boolean isEnd;
+
+        public Node() {
+            children = new Node[26];
+        }
+
+        void insert(String word, int wordIndex) {
+            if (wordIndex == word.length()) {
+                isEnd = true;
+                return;
+            }
+            int charIndex = word.charAt(wordIndex)-'a';
+            if(children[charIndex] == null){
+                children[charIndex] = new Node();
+            }
+            children[charIndex].insert(word, wordIndex+1);
+        }
+
+        boolean search(String word, int wordIndex) {
+            if (wordIndex == word.length()) {
+                return isEnd == true;
+            }
+            int charIndex = word.charAt(wordIndex)-'a';
+            if(children[charIndex] == null){
+                return false;
+            }
+            return children[charIndex].search(word, wordIndex+1);        
+        }
+
+        boolean startsWith(String word, int wordIndex) {
+            if (wordIndex == word.length()) {
+                return true;
+            }
+            int charIndex = word.charAt(wordIndex)-'a';
+            if(children[charIndex] == null){
+                return false;
+            }
+            return children[charIndex].startsWith(word, wordIndex+1);        
+        }        
+    }
     
     public Trie() {
         root = new Node();
     }
     
     public void insert(String word) {
-        Node temp = root;
-        for(char c : word.toCharArray()){
-            if(temp.node[c - 'a'] == null){
-                temp.node[c - 'a'] = new Node();
-            }
-            temp = temp.node[c-'a'];
-        }
-        temp.isWord = true;
+        root.insert(word, 0);
     }
     
     public boolean search(String word) {
-        Node node = find(word);
-        return node != null && node.isWord;
+        return root.search(word, 0);
     }
     
     public boolean startsWith(String prefix) {
-        return find(prefix) != null;
-    }
-
-    public Node find(String word){
-        Node temp = root;
-        for(char c : word.toCharArray()){
-            if(temp.node[c - 'a'] == null){
-                return null;
-            }
-            temp = temp.node[c-'a'];
-        }
-        return temp;
+        return root.startsWith(prefix, 0);
     }
 }
 
