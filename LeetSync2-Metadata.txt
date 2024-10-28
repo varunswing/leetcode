@@ -17,3 +17,4 @@ solutions/3326-minimum-division-operations-to-make-array-non-decreasing|Medium|1
 solutions/1051-height-checker|Easy|1729967400000
 solutions/3327-check-if-dfs-strings-are-palindromes|Hard|1729967400000
 solutions/208-implement-trie-prefix-tree|Medium|1729967400000
+solutions/139-word-break|Medium|1730053800000
