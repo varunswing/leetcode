@@ -1,23 +1,29 @@
 class Solution {
-    public boolean backspaceCompare(String s, String t) {
-        StringBuilder sb = new StringBuilder();
-        for(int i=0; i<s.length(); i++){
-            if(sb.length() > 0 && s.charAt(i) == '#'){
-                sb.deleteCharAt(sb.length()-1);
-            }else if(s.charAt(i) != '#'){
-                sb.append(s.charAt(i));
-            }
-        }
+  public boolean backspaceCompare(String s, String t) {
+    int i = s.length() - 1; // s' index
+    int j = t.length() - 1; // t's index
 
-        StringBuilder tb = new StringBuilder();
-        for(int i=0; i<t.length(); i++){
-            if(tb.length() > 0 && t.charAt(i) == '#'){
-                tb.deleteCharAt(tb.length()-1);
-            }else if(t.charAt(i) != '#'){
-                tb.append(t.charAt(i));
-            }
-        }
-
-        return sb.toString().equals(tb.toString());
+    while (true) {
+      // Delete characters of s if needed.
+      int backspace = 0;
+      while (i >= 0 && (s.charAt(i) == '#' || backspace > 0)) {
+        backspace += s.charAt(i) == '#' ? 1 : -1;
+        --i;
+      }
+      // Delete characters of t if needed.
+      backspace = 0;
+      while (j >= 0 && (t.charAt(j) == '#' || backspace > 0)) {
+        backspace += t.charAt(j) == '#' ? 1 : -1;
+        --j;
+      }
+      if (i >= 0 && j >= 0 && s.charAt(i) == t.charAt(j)) {
+        --i;
+        --j;
+      } else {
+        break;
+      }
     }
+
+    return i == -1 && j == -1;
+  }
 }
