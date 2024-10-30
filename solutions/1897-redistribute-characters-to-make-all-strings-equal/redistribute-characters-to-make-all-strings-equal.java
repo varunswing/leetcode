@@ -9,11 +9,6 @@ class Solution {
             }
         }
 
-        for(int i=0; i<26; i++){
-            if(m[i] % n != 0){
-                return false;
-            }
-        }
-        return true;
+        return Arrays.stream(m).allMatch(c -> c%n == 0);
     }
 }
