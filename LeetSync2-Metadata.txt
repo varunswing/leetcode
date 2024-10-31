@@ -21,3 +21,4 @@ solutions/139-word-break|Medium|1730053800000
 solutions/1184-distance-between-bus-stops|Easy|1730053800000
 solutions/844-backspace-string-compare|Easy|1730140200000
 solutions/1897-redistribute-characters-to-make-all-strings-equal|Easy|1730226600000
+solutions/760-find-anagram-mappings|Easy|1730313000000
