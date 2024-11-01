@@ -23,3 +23,4 @@ solutions/844-backspace-string-compare|Easy|1730140200000
 solutions/1897-redistribute-characters-to-make-all-strings-equal|Easy|1730226600000
 solutions/760-find-anagram-mappings|Easy|1730313000000
 solutions/561-array-partition|Easy|1730399400000
+solutions/270-closest-binary-search-tree-value|Easy|1730399400000
