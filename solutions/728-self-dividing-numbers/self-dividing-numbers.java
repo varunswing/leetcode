@@ -1,23 +1,18 @@
 class Solution {
-    public List<Integer> selfDividingNumbers(int left, int right) {
-        List<Integer> ans = new ArrayList<>();
-        while(left <= right){
-            boolean flag = false;
-            int num = left;
-            while(num != 0){
-                int a = num%10;
-                if(a == 0 || left%a != 0){
-                    flag = true;
-                    break;
-                }
-                num /= 10;
-            }
-            if(!flag){
-                ans.add(left);
-            }
-            left++;
+  public List<Integer> selfDividingNumbers(int left, int right) {
+    List<Integer> ans = new ArrayList<>();
 
-        }
-        return ans;
-    }
+    for (int num = left; num <= right; ++num)
+      if (dividingNumber(num))
+        ans.add(num);
+
+    return ans;
+  }
+
+  private boolean dividingNumber(int num) {
+    for (int n = num; n > 0; n /= 10)
+      if (n % 10 == 0 || num % (n % 10) != 0)
+        return false;
+    return true;
+  }
 }
