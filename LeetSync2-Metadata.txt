@@ -25,3 +25,4 @@ solutions/760-find-anagram-mappings|Easy|1730313000000
 solutions/561-array-partition|Easy|1730399400000
 solutions/270-closest-binary-search-tree-value|Easy|1730399400000
 solutions/2643-row-with-maximum-ones|Easy|1730485800000
+solutions/728-self-dividing-numbers|Easy|1730485800000
