@@ -29,3 +29,4 @@ solutions/728-self-dividing-numbers|Easy|1730485800000
 solutions/2248-intersection-of-multiple-arrays|Easy|1730572200000
 solutions/1967-number-of-strings-that-appear-as-substrings-in-word|Easy|1730658600000
 solutions/492-construct-the-rectangle|Easy|1730658600000
+solutions/796-rotate-string|Easy|1730658600000
