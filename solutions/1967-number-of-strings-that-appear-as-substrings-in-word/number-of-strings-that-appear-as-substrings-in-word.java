@@ -1,11 +1,5 @@
 class Solution {
     public int numOfStrings(String[] patterns, String word) {
-        int res = 0;
-        for(String s : patterns){
-            if(word.contains(s)){
-                res++;
-            }
-        }
-        return res;
+        return (int)Arrays.stream(patterns).filter(p -> word.contains(p)).count();
     }
 }
