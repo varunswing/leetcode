@@ -31,3 +31,4 @@ solutions/1967-number-of-strings-that-appear-as-substrings-in-word|Easy|17306586
 solutions/492-construct-the-rectangle|Easy|1730658600000
 solutions/796-rotate-string|Easy|1730658600000
 solutions/203-remove-linked-list-elements|Easy|1730745000000
+solutions/1378-replace-employee-id-with-the-unique-identifier|Easy|1730745000000
