@@ -32,3 +32,4 @@ solutions/492-construct-the-rectangle|Easy|1730658600000
 solutions/796-rotate-string|Easy|1730658600000
 solutions/203-remove-linked-list-elements|Easy|1730745000000
 solutions/1378-replace-employee-id-with-the-unique-identifier|Easy|1730745000000
+solutions/3274-check-if-two-chessboard-squares-have-the-same-color|Easy|1730745000000
