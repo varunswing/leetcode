@@ -1,39 +1,15 @@
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
 class Solution {
-    public ListNode removeElements(ListNode head, int val) {
-        if(head == null){
-            return null;
-        }
+  public ListNode removeElements(ListNode head, int val) {
+    ListNode dummy = new ListNode(0, head);
+    ListNode prev = dummy;
 
-        while(head != null && head.val == val){
-            head = head.next;
-        }
+    for (; head != null; head = head.next)
+      if (head.val != val) {
+        prev.next = head;
+        prev = prev.next;
+      }
+    prev.next = null; 
 
-        ListNode temp = head;
-        ListNode prev = head;
-
-        while(temp != null){
-            if(temp.val != val){
-                if(temp != head){
-                    prev.next = temp;
-                    prev = temp;
-                }
-            }
-            temp = temp.next;
-        }
-        if(prev != null){
-            prev.next = temp;
-        }
-
-        return head;
-    }
+    return dummy.next;
+  }
 }
