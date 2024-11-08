@@ -8,6 +8,7 @@ class Solution {
       if (bobSizesSet.contains(target))
         return new int[] {aliceSize, target};
     }
+    System.gc();
 
     throw new IllegalArgumentException();
   }
