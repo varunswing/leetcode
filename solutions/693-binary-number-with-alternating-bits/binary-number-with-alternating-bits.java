@@ -1,41 +1,11 @@
 class Solution {
-    public boolean hasAlternatingBits(int n) {
-        int a = Integer.bitCount(n);
-        boolean flag = false;
-        if((n&1) == 0) flag = true;
-        if(flag){
-            int i = 0;
-            while((n != 0)){
-                if((i&1) == 0){
-                    if((n&1) != 0){
-                        return false;
-                    }
-                    n>>=1;
-                }else{
-                    if((n&1) != 1){
-                        return false;
-                    }
-                    n>>=1;
-                }
-                i++;
-            }
-        }else{
-            int i = 0;
-            while((n != 0)){
-                if((i&1) == 0){
-                    if((n&1) != 1){
-                        return false;
-                    }
-                    n>>=1;
-                }else{
-                    if((n&1) != 0){
-                        return false;
-                    }
-                    n>>=1;
-                }
-                i++;
-            }
-        }
-        return true;
-    }
+  public boolean hasAlternatingBits(int n) {
+    //            n = 0b010101
+    //       n >> 2 = 0b000101
+    // n ^ (n >> 2) = 0b010000 = a
+    //        a - 1 = 0b001111
+    //  a & (a - 1) = 0
+    final int a = n ^ (n >> 2);
+    return (a & (a - 1)) == 0;
+  }
 }
