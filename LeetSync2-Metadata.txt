@@ -39,3 +39,4 @@ solutions/263-ugly-number|Easy|1730917800000
 solutions/2660-determine-the-winner-of-a-bowling-game|Easy|1731004200000
 solutions/888-fair-candy-swap|Easy|1731004200000
 solutions/3232-find-if-digit-game-can-be-won|Easy|1731090600000
+solutions/693-binary-number-with-alternating-bits|Easy|1731177000000
