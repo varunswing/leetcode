@@ -1,39 +1,20 @@
 class Solution {
-    public String modifyString(String s) {
-        StringBuilder sb = new StringBuilder(s);
-        int n = s.length();
-        for(int i=0; i<s.length(); i++){
-            int flag = 0;
-            if(sb.charAt(i) == '?'){
-                sb.replace(i, i+1, "a");
-            }
-            if(i>0){
-                if(sb.charAt(i-1) == sb.charAt(i)){
-                    sb.replace(i, i+1, "b");
-                    flag = 1;
-                }
-            }
-            if(flag == 0){
-                if(i < n-1){
-                    if(sb.charAt(i+1) == sb.charAt(i)){
-                        sb.replace(i, i+1, "b");
-                        if(i>0){
-                            if(sb.charAt(i-1) == sb.charAt(i)){
-                                sb.replace(i, i+1, "c");
-                                flag = 1;
-                            }
-                        }
-                    }
-                }
-            }else{
-                if(i < n-1){
-                    if(sb.charAt(i+1) == sb.charAt(i)){
-                        sb.replace(i, i+1, "c");
-                        flag = 1;
-                    }
-                }
-            }
-        }
-        return sb.toString();
-    }
+  public String modifyString(String s) {
+    StringBuilder sb = new StringBuilder();
+
+    for (int i = 0; i < s.length(); ++i)
+      if (s.charAt(i) == '?')
+        sb.append(nextAvailable(sb, s, i));
+      else
+        sb.append(s.charAt(i));
+
+    return sb.toString();
+  }
+
+  private char nextAvailable(StringBuilder sb, final String s, int i) {
+    char c = 'a';
+    while ((i > 0 && sb.charAt(i - 1) == c) || (i + 1 < s.length() && c == s.charAt(i + 1)))
+      ++c;
+    return c;
+  }
 }
