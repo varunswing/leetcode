@@ -41,3 +41,4 @@ solutions/888-fair-candy-swap|Easy|1731004200000
 solutions/3232-find-if-digit-game-can-be-won|Easy|1731090600000
 solutions/693-binary-number-with-alternating-bits|Easy|1731177000000
 solutions/1576-replace-all-s-to-avoid-consecutive-repeating-characters|Easy|1731263400000
+solutions/1078-occurrences-after-bigram|Easy|1731263400000
