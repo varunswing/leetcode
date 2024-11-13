@@ -43,3 +43,4 @@ solutions/693-binary-number-with-alternating-bits|Easy|1731177000000
 solutions/1576-replace-all-s-to-avoid-consecutive-repeating-characters|Easy|1731263400000
 solutions/1078-occurrences-after-bigram|Easy|1731263400000
 solutions/1848-minimum-distance-to-the-target-element|Easy|1731349800000
+solutions/11-container-with-most-water|Medium|1731436200000
