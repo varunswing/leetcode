@@ -1,15 +1,14 @@
 class Solution {
-    public int divisorSubstrings(int num, int k) {
-        String s = String.valueOf(num);
-        int count = 0;
+  public int divisorSubstrings(int num, int k) {
+    final String s = String.valueOf(num);
+    int ans = 0;
 
-        for(int i=0; i<=s.length()-k; i++){
-            int a = Integer.valueOf(s.substring(i, i+k));
-            if(a == 0) continue;
-            if(num%a == 0){
-                count++;
-            }  
-        }
-        return count;
+    for (int i = 0; i + k <= s.length(); ++i) {
+      final int x = Integer.parseInt(s.substring(i, i + k));
+      if (x != 0 && num % x == 0)
+        ++ans;
     }
+
+    return ans;
+  }
 }
