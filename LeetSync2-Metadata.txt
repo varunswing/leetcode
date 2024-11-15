@@ -47,3 +47,4 @@ solutions/11-container-with-most-water|Medium|1731436200000
 solutions/896-monotonic-array|Easy|1731436200000
 solutions/929-unique-email-addresses|Easy|1731522600000
 solutions/2269-find-the-k-beauty-of-a-number|Easy|1731522600000
+solutions/2696-minimum-string-length-after-removing-substrings|Easy|1731609000000
