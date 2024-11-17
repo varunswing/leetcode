@@ -49,3 +49,4 @@ solutions/929-unique-email-addresses|Easy|1731522600000
 solutions/2269-find-the-k-beauty-of-a-number|Easy|1731522600000
 solutions/2696-minimum-string-length-after-removing-substrings|Easy|1731609000000
 solutions/1304-find-n-unique-integers-sum-up-to-zero|Easy|1731695400000
+solutions/1099-two-sum-less-than-k|Easy|1731781800000
