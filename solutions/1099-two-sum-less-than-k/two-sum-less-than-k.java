@@ -1,20 +1,22 @@
 class Solution {
-    public int twoSumLessThanK(int[] nums, int k) {
-        int sum = -1;
+  public int twoSumLessThanK(int[] nums, int k) {
+    if (nums.length < 2)
+      return -1;
 
-        Arrays.sort(nums);
+    int ans = -1; // Note the constraint that nums[i] > 0.
+    int l = 0;
+    int r = nums.length - 1;
 
-        int left = 0;
-        int right = nums.length - 1;
+    Arrays.sort(nums);
 
-        while(left < right){
-            if(nums[left] + nums[right] < k){
-                sum = Math.max(sum, nums[left] + nums[right]);
-                left++;
-            }else{
-                right--;
-            }
-        } 
-        return sum;
-    }
+    while (l < r)
+      if (nums[l] + nums[r] < k) {
+        ans = Math.max(ans, nums[l] + nums[r]);
+        ++l;
+      } else {
+        --r;
+      }
+
+    return ans;
+  }
 }
