@@ -51,3 +51,4 @@ solutions/2696-minimum-string-length-after-removing-substrings|Easy|173160900000
 solutions/1304-find-n-unique-integers-sum-up-to-zero|Easy|1731695400000
 solutions/1099-two-sum-less-than-k|Easy|1731781800000
 solutions/1933-check-if-string-is-decomposable-into-value-equal-substrings|Easy|1731868200000
+solutions/2293-min-max-game|Easy|1731954600000
