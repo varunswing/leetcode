@@ -54,3 +54,4 @@ solutions/1933-check-if-string-is-decomposable-into-value-equal-substrings|Easy|
 solutions/2293-min-max-game|Easy|1731954600000
 solutions/455-assign-cookies|Easy|1731954600000
 solutions/415-add-strings|Easy|1731954600000
+solutions/520-detect-capital|Easy|1731954600000
