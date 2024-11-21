@@ -56,3 +56,4 @@ solutions/455-assign-cookies|Easy|1731954600000
 solutions/415-add-strings|Easy|1731954600000
 solutions/520-detect-capital|Easy|1731954600000
 solutions/374-guess-number-higher-or-lower|Easy|1732041000000
+solutions/2614-prime-in-diagonal|Easy|1732127400000
