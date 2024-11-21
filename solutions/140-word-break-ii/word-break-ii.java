@@ -1,27 +1,26 @@
 class Solution {
     public List<String> wordBreak(String s, List<String> wordDict) {
-        Set<String> st = new HashSet(wordDict);
-        Map<String, List<String>> resMap = new HashMap();
-        return backtrack(s, st, resMap);
+        Set<String> wordSet = new HashSet<>(wordDict);
+        Map<String, List<String>> memo = new HashMap<>();
+        return backtrack(s, wordSet, memo);
     }
 
-
-    public List<String> backtrack(String s, Set<String> wordSet, Map<String, List<String>> memo) {
+    public List<String> backtrack(String s, Set<String> wordDict, Map<String, List<String>> memo){
         if(memo.containsKey(s)){
             return memo.get(s);
         }
 
         List<String> ans = new ArrayList<>();
 
-        for (int end = 1; end <= s.length(); end++) {
-            String prefix = s.substring(0, end);
-            if (wordSet.contains(prefix)) {
-                List<String> subList = backtrack(s.substring(end), wordSet, memo);
-                if (subList.isEmpty() && end == s.length()) {
+        for(int i=1; i<=s.length(); i++){
+            String prefix = s.substring(0, i);
+            if(wordDict.contains(prefix)){
+                List<String> res = backtrack(s.substring(i), wordDict, memo);
+                if(res.isEmpty() && i==s.length()){
                     ans.add(prefix);
                 }
-                for (String sub : subList) {
-                    ans.add(prefix + " " + sub);
+                for(String ss : res){
+                    ans.add(prefix + " " + ss);
                 }
             }
         }
