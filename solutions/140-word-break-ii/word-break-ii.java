@@ -1,31 +1,30 @@
 class Solution {
+
+    List<String> ans = new ArrayList<>();
     public List<String> wordBreak(String s, List<String> wordDict) {
-        Set<String> wordSet = new HashSet<>(wordDict);
-        Map<String, List<String>> memo = new HashMap<>();
-        return backtrack(s, wordSet, memo);
+        backtrack(0, s, new StringBuilder(), wordDict);
+        return ans;
     }
 
-    public List<String> backtrack(String s, Set<String> wordDict, Map<String, List<String>> memo){
-        if(memo.containsKey(s)){
-            return memo.get(s);
+
+    private void backtrack(int index, String s, StringBuilder currSentence, List<String> wordDict){
+
+        if(index == s.length()){
+            ans.add(currSentence.toString().trim());
+            return;
         }
 
-        List<String> ans = new ArrayList<>();
 
-        for(int i=1; i<=s.length(); i++){
-            String prefix = s.substring(0, i);
-            if(wordDict.contains(prefix)){
-                List<String> res = backtrack(s.substring(i), wordDict, memo);
-                if(res.isEmpty() && i==s.length()){
-                    ans.add(prefix);
-                }
-                for(String ss : res){
-                    ans.add(prefix + " " + ss);
-                }
+        for(int i = index; i < s.length(); i++){
+            String word =s.substring(index, i + 1);
+            if(wordDict.contains(word)){
+                int currLen = currSentence.length();
+                currSentence.append(word).append(" ");
+                backtrack( i + 1, s, currSentence, wordDict);
+                currSentence.setLength(currLen);
             }
+
         }
 
-        memo.put(s, ans);
-        return ans;
     }
 }
