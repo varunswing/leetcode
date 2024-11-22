@@ -59,3 +59,4 @@ solutions/374-guess-number-higher-or-lower|Easy|1732041000000
 solutions/2614-prime-in-diagonal|Easy|1732127400000
 solutions/140-word-break-ii|Hard|1732127400000
 solutions/2913-subarrays-distinct-element-sum-of-squares-i|Easy|1732213800000
+solutions/2451-odd-string-difference|Easy|1732213800000
