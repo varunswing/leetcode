@@ -1,22 +1,14 @@
 class Solution {
-    public int[] diStringMatch(String s) {
-        int l = s.length();
-        int d = l;
-        int n = 0;
-        
-        int[] ans = new int[l+1];
-        for(int i=0; i<l; i++){
-            if(s.charAt(i) == 'I'){
-                ans[i] = n;
-                n++;
-            }else{
-                ans[i] = d;
-                d--;
-            }
-        }
+  public int[] diStringMatch(String s) {
+    final int n = s.length();
+    int[] ans = new int[n + 1];
+    int mn = 0;
+    int mx = n;
 
-        ans[l] = n;
+    for (int i = 0; i < n; ++i)
+      ans[i] = s.charAt(i) == 'I' ? mn++ : mx--;
+    ans[n] = mn;
 
-        return ans;
-    }
+    return ans;
+  }
 }
