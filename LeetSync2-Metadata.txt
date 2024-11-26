@@ -64,3 +64,4 @@ solutions/2678-number-of-senior-citizens|Easy|1732300200000
 solutions/709-to-lower-case|Easy|1732386600000
 solutions/942-di-string-match|Easy|1732386600000
 solutions/551-student-attendance-record-i|Easy|1732473000000
+solutions/852-peak-index-in-a-mountain-array|Medium|1732559400000
