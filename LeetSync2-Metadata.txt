@@ -66,3 +66,4 @@ solutions/942-di-string-match|Easy|1732386600000
 solutions/551-student-attendance-record-i|Easy|1732473000000
 solutions/852-peak-index-in-a-mountain-array|Medium|1732559400000
 solutions/2609-find-the-longest-balanced-substring-of-a-binary-string|Easy|1732645800000
+solutions/215-kth-largest-element-in-an-array|Medium|1732645800000
