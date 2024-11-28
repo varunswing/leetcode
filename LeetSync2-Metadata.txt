@@ -68,3 +68,4 @@ solutions/852-peak-index-in-a-mountain-array|Medium|1732559400000
 solutions/2609-find-the-longest-balanced-substring-of-a-binary-string|Easy|1732645800000
 solutions/215-kth-largest-element-in-an-array|Medium|1732645800000
 solutions/819-most-common-word|Easy|1732732200000
+solutions/1085-sum-of-digits-in-the-minimum-number|Easy|1732732200000
