@@ -71,3 +71,4 @@ solutions/819-most-common-word|Easy|1732732200000
 solutions/1085-sum-of-digits-in-the-minimum-number|Easy|1732732200000
 solutions/783-minimum-distance-between-bst-nodes|Easy|1732732200000
 solutions/2980-check-if-bitwise-or-has-trailing-zeros|Easy|1732732200000
+solutions/246-strobogrammatic-number|Easy|1732732200000
