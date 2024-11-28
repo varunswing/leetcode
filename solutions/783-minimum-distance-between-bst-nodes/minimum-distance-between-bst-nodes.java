@@ -15,7 +15,7 @@
  */
 class Solution {
 
-    List<Integer> ans = new ArrayList<>();
+    Set<Integer> ans = new TreeSet();
 
     public int minDiffInBST(TreeNode root) {
         if(root == null){
@@ -27,18 +27,21 @@ class Solution {
 
         dfs(root.right, ans);
 
-        Collections.sort(ans);
-
         int res = Integer.MAX_VALUE;
 
-        for(int i=0; i<ans.size()-1; i++){
-            res = Math.min(res, Math.abs(ans.get(i) - ans.get(i+1)));
+        Integer prev = null;
+        for(Integer i : ans){
+            if(prev != null){
+                res = Math.min(res, Math.abs(i - prev));
+            }
+            prev = i;
+            
         }
 
         return res;
     }
 
-    public void dfs(TreeNode root, List<Integer> ans){
+    public void dfs(TreeNode root, Set<Integer> ans){
         if(root == null){
             return;
         }
