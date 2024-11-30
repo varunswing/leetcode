@@ -75,3 +75,4 @@ solutions/246-strobogrammatic-number|Easy|1732732200000
 solutions/2404-most-frequent-even-element|Easy|1732818600000
 solutions/102-binary-tree-level-order-traversal|Medium|1732818600000
 solutions/98-validate-binary-search-tree|Medium|1732818600000
+solutions/824-goat-latin|Easy|1732905000000
