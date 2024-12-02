@@ -1,23 +1,26 @@
 class Solution {
     public int calPoints(String[] operations) {
-        List<Integer> ans = new ArrayList<>();
+        Deque<Integer> scores = new ArrayDeque<>();
 
-        for(String s : operations){
-            if(Character.isDigit(s.charAt(0)) || s.matches("-?\\d+")){
-                ans.add(Integer.valueOf(s));
-            }else if(s.charAt(0) == '+'){
-                ans.add(ans.get(ans.size() - 1) + ans.get(ans.size() - 2));
-            }else if(s.charAt(0) == 'D'){
-                ans.add(ans.get(ans.size() - 1)*2);
-            }else if(s.charAt(0) == 'C'){
-                ans.removeLast();
+        for (final String operation : operations) {
+            switch (operation) {
+                case "+":
+                final int lastScore = scores.pop();
+                final int secondLastScore = scores.peek();
+                scores.push(lastScore);
+                scores.push(lastScore + secondLastScore);
+                break;
+                case "D":
+                scores.push(scores.peek() * 2);
+                break;
+                case "C":
+                scores.pop();
+                break;
+                default:
+                scores.push(Integer.parseInt(operation));
             }
         }
 
-        ans.forEach(num -> System.out.println(num));
-
-        // return ans.stream().reduce(0, Integer::sum);
-
-        return ans.stream().mapToInt(Integer::intValue).sum();
+        return scores.stream().mapToInt(Integer::intValue).sum();
     }
 }
