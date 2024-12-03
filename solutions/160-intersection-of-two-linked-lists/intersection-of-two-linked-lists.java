@@ -12,7 +12,6 @@
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         List<ListNode> a = new ArrayList<>();
-        List<ListNode> b = new ArrayList<>();
 
         while(headA!=null){
             a.add(headA);
@@ -20,14 +19,10 @@ public class Solution {
         }
 
         while(headB!=null){
-            b.add(headB);
-            headB = headB.next;
-        }
-
-        for(ListNode c : a){
-            if(b.contains(c)){
-                return c;
+            if(a.contains(headB)){
+                return headB;
             }
+            headB = headB.next;
         }
 
         return null;
