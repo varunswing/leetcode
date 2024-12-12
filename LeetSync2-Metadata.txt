@@ -84,3 +84,4 @@ solutions/557-reverse-words-in-a-string-iii|Easy|1733164200000
 solutions/1624-largest-substring-between-two-equal-characters|Easy|1733250600000
 solutions/2164-sort-even-and-odd-indices-independently|Easy|1733769000000
 solutions/3349-adjacent-increasing-subarrays-detection-i|Easy|1733855400000
+solutions/2319-check-if-matrix-is-x-matrix|Easy|1733941800000
