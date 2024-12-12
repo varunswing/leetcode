@@ -7,10 +7,8 @@ class Solution {
                     if(grid[i][j] == 0){
                         return false;
                     }
-                }else{
-                    if(grid[i][j] != 0){
-                        return false;
-                    }
+                }else if(grid[i][j] != 0){
+                    return false;
                 }
             }
         }
