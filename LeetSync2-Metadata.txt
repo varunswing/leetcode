@@ -87,3 +87,4 @@ solutions/3349-adjacent-increasing-subarrays-detection-i|Easy|1733855400000
 solutions/2319-check-if-matrix-is-x-matrix|Easy|1733941800000
 solutions/2078-two-furthest-houses-with-different-colors|Easy|1733941800000
 solutions/2558-take-gifts-from-the-richest-pile|Easy|1734028200000
+solutions/2788-split-strings-by-separator|Easy|1734028200000
