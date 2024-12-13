@@ -89,3 +89,4 @@ solutions/2078-two-furthest-houses-with-different-colors|Easy|1733941800000
 solutions/2558-take-gifts-from-the-richest-pile|Easy|1734028200000
 solutions/2788-split-strings-by-separator|Easy|1734028200000
 solutions/2432-the-employee-that-worked-on-the-longest-task|Easy|1734028200000
+solutions/1213-intersection-of-three-sorted-arrays|Easy|1734028200000
