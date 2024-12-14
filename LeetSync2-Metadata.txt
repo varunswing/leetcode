@@ -92,3 +92,4 @@ solutions/2432-the-employee-that-worked-on-the-longest-task|Easy|1734028200000
 solutions/1213-intersection-of-three-sorted-arrays|Easy|1734028200000
 solutions/1002-find-common-characters|Easy|1734028200000
 solutions/1346-check-if-n-and-its-double-exist|Easy|1734028200000
+solutions/1566-detect-pattern-of-length-m-repeated-k-or-more-times|Easy|1734114600000
