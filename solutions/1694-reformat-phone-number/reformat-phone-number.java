@@ -1,27 +1,18 @@
 class Solution {
     public String reformatNumber(String number) {
         StringBuilder sb = new StringBuilder();
-        for(int i=0; i<number.length(); i++){
-            if(number.charAt(i) != '-' && number.charAt(i) != ' '){
-                sb.append(number.charAt(i));
-            }
-        }
 
-        int n = sb.length();
+        number = number.replaceAll("[-\\s]", "");
+
         int i = 0;
-        while(n > 4){
-            i+=3;
-            sb.insert(i, "-");
-            n = sb.substring(i+1).length();
-            if(n > 4){
-                i++;
-            }
-        }
+        for (i = 0; i + 4 < number.length(); i += 3)
+            sb.append(number.substring(i, i + 3) + '-');
 
-        if(n == 4){
-            sb.insert(sb.length() - 2, "-");
-        }
-        
+        final int countFinalDigits = number.length() - i;
+        if (countFinalDigits < 4)
+            sb.append(number.substring(i));
+        else 
+            sb.append(number.substring(i, i + 2) + '-' + number.substring(i + 2));
 
         return sb.toString();
     }
