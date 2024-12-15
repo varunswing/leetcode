@@ -96,3 +96,4 @@ solutions/1566-detect-pattern-of-length-m-repeated-k-or-more-times|Easy|17341146
 solutions/1708-largest-subarray-length-k|Easy|1734114600000
 solutions/1694-reformat-phone-number|Easy|1734114600000
 solutions/128-longest-consecutive-sequence|Medium|1734114600000
+solutions/1507-reformat-date|Easy|1734201000000
