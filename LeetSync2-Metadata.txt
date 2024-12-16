@@ -99,3 +99,4 @@ solutions/128-longest-consecutive-sequence|Medium|1734114600000
 solutions/1507-reformat-date|Easy|1734201000000
 solutions/1941-check-if-all-characters-have-equal-number-of-occurrences|Easy|1734201000000
 solutions/212-word-search-ii|Hard|1734201000000
+solutions/867-transpose-matrix|Easy|1734287400000
