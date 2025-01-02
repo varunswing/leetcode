@@ -101,3 +101,4 @@ solutions/1941-check-if-all-characters-have-equal-number-of-occurrences|Easy|173
 solutions/212-word-search-ii|Hard|1734201000000
 solutions/867-transpose-matrix|Easy|1734287400000
 solutions/219-contains-duplicate-ii|Easy|1735583400000
+solutions/506-relative-ranks|Easy|1735756200000
