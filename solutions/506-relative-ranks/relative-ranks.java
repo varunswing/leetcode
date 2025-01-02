@@ -1,34 +1,24 @@
-
 class Solution {
-    public String[] findRelativeRanks(int[] score) {
-        int n = score.length;
-        PriorityQueue<Integer> pq = new PriorityQueue(Collections.reverseOrder());
-        for(int i=0; i<score.length; i++){
-            pq.add(score[i]);
-        }
+    public String[] findRelativeRanks(int[] nums) {
+        final int n = nums.length;
+        String[] ans = new String[n];
+        List<Integer> indices = new ArrayList<>();
 
-        String[] s= new String[n];
+        for (int i = 0; i < n; ++i)
+        indices.add(i);
 
-        int count = 0;
-        Map<Integer, String> m = new HashMap();
-        while(pq.size() > 0){
-            count++;
-            int a = pq.poll();
-            if(count == 1){
-                m.put(a, "Gold Medal");
-            }else if(count == 2){
-                m.put(a, "Silver Medal");
-            }else if(count == 3){
-                m.put(a, "Bronze Medal");
-            }else{
-                m.put(a, String.valueOf(count));
-            }
-        }
+        Collections.sort(indices, (a, b) -> Integer.compare(nums[b], nums[a]));
 
-        for(int i=0; i<n; i++){
-            s[i] = m.get(score[i]);
-        }
+        for (int i = 0; i < n; ++i)
+        if (i == 0)
+            ans[indices.get(0)] = "Gold Medal";
+        else if (i == 1)
+            ans[indices.get(1)] = "Silver Medal";
+        else if (i == 2)
+            ans[indices.get(2)] = "Bronze Medal";
+        else
+            ans[indices.get(i)] = String.valueOf(i + 1);
 
-        return s;
+        return ans;
     }
 }
