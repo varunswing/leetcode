@@ -102,3 +102,4 @@ solutions/212-word-search-ii|Hard|1734201000000
 solutions/867-transpose-matrix|Easy|1734287400000
 solutions/219-contains-duplicate-ii|Easy|1735583400000
 solutions/506-relative-ranks|Easy|1735756200000
+solutions/2341-maximum-number-of-pairs-in-array|Easy|1735842600000
