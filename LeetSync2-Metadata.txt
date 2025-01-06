@@ -105,3 +105,4 @@ solutions/506-relative-ranks|Easy|1735756200000
 solutions/2341-maximum-number-of-pairs-in-array|Easy|1735842600000
 solutions/1196-how-many-apples-can-you-put-into-the-basket|Easy|1736015400000
 solutions/1913-maximum-product-difference-between-two-pairs|Easy|1736101800000
+solutions/3407-substring-matching-pattern|Easy|1736101800000
