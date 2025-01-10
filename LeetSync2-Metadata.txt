@@ -110,3 +110,4 @@ solutions/1337-the-k-weakest-rows-in-a-matrix|Easy|1736101800000
 solutions/1200-minimum-absolute-difference|Easy|1736188200000
 solutions/326-power-of-three|Easy|1736188200000
 solutions/2185-counting-words-with-a-given-prefix|Easy|1736361000000
+solutions/290-word-pattern|Easy|1736447400000
