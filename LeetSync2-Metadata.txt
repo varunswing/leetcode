@@ -111,3 +111,4 @@ solutions/1200-minimum-absolute-difference|Easy|1736188200000
 solutions/326-power-of-three|Easy|1736188200000
 solutions/2185-counting-words-with-a-given-prefix|Easy|1736361000000
 solutions/290-word-pattern|Easy|1736447400000
+solutions/283-move-zeroes|Easy|1736533800000
