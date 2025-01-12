@@ -112,3 +112,4 @@ solutions/326-power-of-three|Easy|1736188200000
 solutions/2185-counting-words-with-a-given-prefix|Easy|1736361000000
 solutions/290-word-pattern|Easy|1736447400000
 solutions/283-move-zeroes|Easy|1736533800000
+solutions/3222-find-the-winning-player-in-coin-game|Easy|1736620200000
