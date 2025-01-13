@@ -114,3 +114,4 @@ solutions/290-word-pattern|Easy|1736447400000
 solutions/283-move-zeroes|Easy|1736533800000
 solutions/3222-find-the-winning-player-in-coin-game|Easy|1736620200000
 solutions/1837-sum-of-digits-in-base-k|Easy|1736706600000
+solutions/292-nim-game|Easy|1736793000000
