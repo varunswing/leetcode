@@ -117,3 +117,4 @@ solutions/1837-sum-of-digits-in-base-k|Easy|1736706600000
 solutions/292-nim-game|Easy|1736793000000
 solutions/935-knight-dialer|Medium|1736793000000
 solutions/1427-perform-string-shifts|Easy|1736793000000
+solutions/230-kth-smallest-element-in-a-bst|Medium|1736879400000
