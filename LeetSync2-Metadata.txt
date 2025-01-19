@@ -120,3 +120,4 @@ solutions/1427-perform-string-shifts|Easy|1736793000000
 solutions/230-kth-smallest-element-in-a-bst|Medium|1736879400000
 solutions/295-find-median-from-data-stream|Hard|1736879400000
 solutions/1646-get-maximum-in-generated-array|Easy|1737052200000
+solutions/84-largest-rectangle-in-histogram|Hard|1737225000000
