@@ -123,3 +123,4 @@ solutions/1646-get-maximum-in-generated-array|Easy|1737052200000
 solutions/84-largest-rectangle-in-histogram|Hard|1737225000000
 solutions/367-valid-perfect-square|Easy|1737225000000
 solutions/1423-maximum-points-you-can-obtain-from-cards|Medium|1737484200000
+solutions/409-longest-palindrome|Easy|1738002600000
