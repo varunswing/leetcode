@@ -125,3 +125,4 @@ solutions/367-valid-perfect-square|Easy|1737225000000
 solutions/1423-maximum-points-you-can-obtain-from-cards|Medium|1737484200000
 solutions/409-longest-palindrome|Easy|1738002600000
 solutions/541-reverse-string-ii|Easy|1738089000000
+solutions/408-valid-word-abbreviation|Easy|1738175400000
