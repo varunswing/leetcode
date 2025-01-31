@@ -1,39 +1,21 @@
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
 class Solution {
     public ListNode frequenciesOfElements(ListNode head) {
-        int[] f = new int[100001];
+        HashMap<Integer, Integer> count = new HashMap<>();
+        ListNode curr = head;
 
-        ListNode res = new ListNode(0);
-        ListNode temp = res;
-
-        while(head!=null){
-            f[head.val]++;
-            head = head.next;
+        while (curr != null) {
+            count.merge(curr.val, 1, Integer::sum);
+            curr = curr.next;
         }
 
-        for(int i=0; i<100001; i++){
-            if(f[i] > 0){
-                ListNode a = new ListNode(f[i]);
-                if(res.val == 0){
-                    res = a;
-                    temp = res;
-                }else{
-                    res.next = a;
-                    res = res.next;
-                }
-            }
+        ListNode dummy = new ListNode(0);
+        ListNode tail = dummy;
+
+        for (final int freq : count.values()) {
+            tail.next = new ListNode(freq);
+            tail = tail.next;
         }
 
-        return temp;
-        
+        return dummy.next;
     }
 }
