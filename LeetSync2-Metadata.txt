@@ -129,3 +129,4 @@ solutions/408-valid-word-abbreviation|Easy|1738175400000
 solutions/3063-linked-list-frequency|Easy|1738261800000
 solutions/1133-largest-unique-number|Easy|1738434600000
 solutions/2160-minimum-sum-of-four-digit-number-after-splitting-digits|Easy|1738521000000
+solutions/2965-find-missing-and-repeated-values|Easy|1741199400000
