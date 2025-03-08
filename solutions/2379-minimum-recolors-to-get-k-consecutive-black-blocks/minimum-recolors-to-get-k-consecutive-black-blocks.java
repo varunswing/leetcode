@@ -30,7 +30,7 @@ class Solution {
         }
 
         if(n == k){
-            return wc[n-1];
+            return k - bc[n-1];
         }
 
         return ans;
