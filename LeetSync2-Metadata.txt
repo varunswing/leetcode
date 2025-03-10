@@ -131,3 +131,4 @@ solutions/1133-largest-unique-number|Easy|1738434600000
 solutions/2160-minimum-sum-of-four-digit-number-after-splitting-digits|Easy|1738521000000
 solutions/2965-find-missing-and-repeated-values|Easy|1741199400000
 solutions/2379-minimum-recolors-to-get-k-consecutive-black-blocks|Easy|1741372200000
+solutions/567-permutation-in-string|Medium|1741545000000
